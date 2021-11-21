@@ -770,6 +770,9 @@ extern "C" {
     pub fn clock_adjtime(clk_id: ::clockid_t, buf: *mut ::timex) -> ::c_int;
 
     pub fn ctermid(s: *mut ::c_char) -> *mut ::c_char;
+
+    pub fn pthread_getname_np(thread: ::pthread_t, name: *mut ::c_char, len: ::size_t) -> ::c_int;
+    pub fn pthread_setname_np(thread: ::pthread_t, name: *const ::c_char) -> ::c_int;
 }
 
 cfg_if! {
